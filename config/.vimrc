@@ -12,8 +12,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" PHP plugin
 Plugin 'StanAngeloff/php.vim'
+
+" Awesome statusline
 Plugin 'bling/vim-airline'
+
+" Vim debugging
+Plugin 'joonty/vdebug'
 
 call vundle#end()
 filetype plugin indent on
