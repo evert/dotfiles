@@ -11,7 +11,7 @@ let t_Co=256
 syntax enable
 
 " Size of a 'hard tab'
-set tabstop=8
+set tabstop=4
 
 " Size of an indent
 set shiftwidth=4
