@@ -1,6 +1,6 @@
 SHELL=/bin/sh
 HOMEDIR=$(HOME)
-THINGS_TO_LINK=.gitconfig .zshrc
+THINGS_TO_LINK=.gitconfig .zshrc .tmux.conf
 
 all: link
 
