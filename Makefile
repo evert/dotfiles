@@ -30,4 +30,8 @@ vim:
 	mkdir -p $(HOMEDIR)/.vim/bundle
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+bin: install-packages
+	mkdir $(HOMEDIR)/bin
+	curl -sS https://getcomposer.org/installer | php -- --install-dir=$(HOMEDIR)/bin --filename=composer
+
 .PHONY: all install git link
