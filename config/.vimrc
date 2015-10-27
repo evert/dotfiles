@@ -1,5 +1,23 @@
+" Show line numbers
+set number
+
 " Show vim-airline all the time
 set laststatus=2
+
+" 256 colors
+let t_Co=256
+
+" Turning on syntax highlighting, if it was off.
+syntax enable
+
+" Size of a 'hard tab'
+set tabstop=8
+
+" Size of an indent
+set shiftwidth=4
+
+" Use spaces for tabs
+set expandtab
 
 " VUNDLE stuff.
 set nocompatible              " be iMproved, required
