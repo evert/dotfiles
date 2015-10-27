@@ -1,0 +1,30 @@
+[user]
+    name = Evert Pot
+    email = me@evertpot.com
+    signingkey = 6D75CC9B
+
+[color]
+    ui = auto
+[alias]
+    incoming = "!git remote update -p; git log ..@{u}"
+    outgoing = log @{u}..
+    tree = log --oneline --decorate --graph
+    d = difftool
+    serve = daemon --verbose --export-all --base-path=. --reuseaddr --enable=receive-pack
+[core]
+    excludesfile = /Users/evert/.gitignore_global
+    pager = less -F -X
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[push]
+    default = simple
+
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
