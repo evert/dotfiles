@@ -20,6 +20,6 @@ install-packages:
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o install-oh-my-zsh.sh;
 	sh install-oh-my-zsh.sh
 	rm install-oh-my-zsh.sh
-	chsh -s /bin/zsh
+	chsh -s /usr/bin/zsh
 
 .PHONY: all install git link
