@@ -19,6 +19,10 @@ set shiftwidth=4
 " Use spaces for tabs
 set expandtab
 
+" Automatically open NERDTree when hitting Ctrl-n
+map <C-n> :NERDTreeToggle<CR>
+
+
 " VUNDLE stuff.
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -39,6 +43,12 @@ Plugin 'bling/vim-airline'
 
 " Vim debugging
 Plugin 'joonty/vdebug'
+
+" File explorer
+Plugin 'scrooloose/nerdtree'
+
+" NERDTree git integration
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()
 filetype plugin indent on
