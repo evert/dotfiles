@@ -22,11 +22,16 @@ set expandtab
 " Automatically open NERDTree when hitting Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
+" Remember the last position of the file we were in
+" VimTip 80: Restore cursor to file position in previous editing session
+" for unix/linux/solaris
+set viminfo='10,\"100,:20,%,n~/.viminfo
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 
 " VUNDLE stuff.
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
