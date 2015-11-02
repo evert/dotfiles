@@ -18,7 +18,20 @@ link:
 install: install-packages oh-my-zsh link vim
 
 install-packages:
-	sudo apt-get install -y vim git tmux zsh curl php5 php5-xdebug php5-mysql php5-curl php5-sqlite mysql-server xclip
+	sudo apt-get install -y \
+		vim \
+		git \
+		tig \
+		tmux \
+		zsh \
+		curl \
+		php5 \
+		php5-xdebug \
+		php5-mysql \
+		php5-curl \
+		php5-sqlite \
+		mysql-server \
+		xclip
 
 oh-my-zsh:
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o install-oh-my-zsh.sh;
