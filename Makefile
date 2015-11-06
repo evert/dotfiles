@@ -31,7 +31,11 @@ install-packages:
 		php5-curl \
 		php5-sqlite \
 		mysql-server \
-		xclip
+		xclip \
+		yui-compressor \
+		nodejs \
+		npm \
+		ack-grep
 
 oh-my-zsh:
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o install-oh-my-zsh.sh;
