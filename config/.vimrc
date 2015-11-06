@@ -55,8 +55,15 @@ Plugin 'scrooloose/nerdtree'
 " NERDTree git integration
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+" Better syntax highlighting for markdown.
+Plugin 'BrandonMathis/vim-flavored-markdown'
+
 call vundle#end()
 filetype plugin indent on
 
 " END OF VUNDLE stuff
 
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
