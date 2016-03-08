@@ -58,6 +58,12 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Better syntax highlighting for markdown.
 Plugin 'BrandonMathis/vim-flavored-markdown'
 
+" Required for tobyS/pdv
+Bundle 'tobyS/vmustache'
+
+" PHP docbloc plugin
+Bundle 'tobyS/pdv'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -67,3 +73,6 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
