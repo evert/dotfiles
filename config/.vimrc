@@ -64,6 +64,12 @@ Bundle 'tobyS/vmustache'
 " PHP docbloc plugin
 Bundle 'tobyS/pdv'
 
+" Go plugin!
+Bundle 'fatih/vim-go'
+
+" Neocomplete
+Bundle 'Shougo/neocomplete.vim'
+
 call vundle#end()
 filetype plugin indent on
 
