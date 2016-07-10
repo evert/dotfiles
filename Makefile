@@ -2,7 +2,9 @@ SHELL=/bin/sh
 HOMEDIR=$(HOME)
 THINGS_TO_LINK=.gitconfig .zshrc .tmux.conf .vimrc
 
-all: link
+UNAME := $(shell uname)
+
+all: install
 
 link:
 	@for filename in $(THINGS_TO_LINK) ; do \
@@ -15,10 +17,31 @@ link:
 		fi; \
 	done
 
-install: install-packages oh-my-zsh link vim
+# Safe for re-running
+install: link install-packages
+
+# Contains stuff that cannot be safely re-run as well, and for now should only be ran the first time we're installing
+fresh-install: install oh-my-zsh vim
 
 install-packages:
-	sudo apt-get install -y \
+ifeq ($(UNAME),Darwin)
+	@echo "Darwin detected"
+	brew install \
+		vim \
+		git \
+		tig \
+		tmux \
+		zsh \
+		curl \
+		php70 \
+		php70-xdebug \
+		yuicompressor \
+		nodejs \
+		npm \
+		ack
+else
+	@echo "Linux detected. Assuming there's an apt binary though."	
+	sudo apt install -y \
 		vim \
 		git \
 		tig \
@@ -36,6 +59,7 @@ install-packages:
 		nodejs \
 		npm \
 		ack-grep
+endif
 
 oh-my-zsh:
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o install-oh-my-zsh.sh;
