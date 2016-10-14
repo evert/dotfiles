@@ -56,7 +56,6 @@ else
 		xclip \
 		yui-compressor \
 		nodejs \
-		npm \
 		tree \
 		ack-grep
 endif
