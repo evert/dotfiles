@@ -48,16 +48,16 @@ else
 		tmux \
 		zsh \
 		curl \
-		php5 \
-		php5-xdebug \
-		php5-mysql \
-		php5-curl \
-		php5-sqlite \
+		php \
+		php-xdebug \
+		php-mysql \
+		php-curl \
 		mysql-server \
 		xclip \
 		yui-compressor \
 		nodejs \
 		npm \
+		tree \
 		ack-grep
 endif
 
