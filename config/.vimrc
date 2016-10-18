@@ -55,8 +55,9 @@ Plugin 'scrooloose/nerdtree'
 " NERDTree git integration
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-" Better syntax highlighting for markdown.
-Plugin 'BrandonMathis/vim-flavored-markdown'
+" Better markdown support
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " Required for tobyS/pdv
 Bundle 'tobyS/vmustache'
@@ -75,10 +76,9 @@ filetype plugin indent on
 
 " END OF VUNDLE stuff
 
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
+" Support frontmatter in markdown files
+let g:vim_markdown_frontmatter = 1
+
 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
