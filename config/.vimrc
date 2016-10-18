@@ -19,6 +19,15 @@ set shiftwidth=4
 " Use spaces for tabs
 set expandtab
 
+" Incremental search
+set incsearch
+
+" Highlight search
+" set hlsearch
+
+" Don't do folding
+set nofoldenable
+
 " Automatically open NERDTree when hitting Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
