@@ -28,6 +28,9 @@ set incsearch
 " Don't do folding
 set nofoldenable
 
+" My preference is to not wrap
+set nowrap
+
 " Automatically open NERDTree when hitting Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
