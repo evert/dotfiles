@@ -1,2 +1,5 @@
 # Keeping my old files there for reference.
 /old
+
+# Auto-generated vim
+/config/.vim/bundle
