@@ -15,7 +15,7 @@
     excludesfile = /Users/evert/.gitignore_global
     pager = less -F -X
 [diff]
-    tool = vimdiff
+	tool = vimdiff
 [difftool]
     prompt = false
 [push]

@@ -90,6 +90,11 @@ filetype plugin indent on
 " Support frontmatter in markdown files
 let g:vim_markdown_frontmatter = 1
 
-
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
+
+" Show buffers when there's only one tab open
+let g:airline#extensions#tabline#enabled = 1
+
+" Powerline fonts for vim-airline
+let g:airline_powerline_fonts = 1

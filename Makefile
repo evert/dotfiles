@@ -57,6 +57,7 @@ else
 		yui-compressor \
 		nodejs \
 		tree \
+		powerline \
 		ack-grep
 endif
 

@@ -64,3 +64,16 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 export EDITOR='vim'
+
+export GPGKEY=AE788729
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Composer global dir
+export PATH="$HOME/.composer/vendor/bin:$PATH:"
+
+export GOPATH=/home/evert/src
+
+# Colors. Oh yea!
+alias ls="ls --color=always"
