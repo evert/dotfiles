@@ -33,12 +33,12 @@ ifeq ($(UNAME),Darwin)
 		tmux \
 		zsh \
 		curl \
-		php70 \
-		php70-xdebug \
+		homebrew/php/php70 \
 		yuicompressor \
 		nodejs \
 		npm \
-		ack
+		ack \
+		reattach-to-user-namespace
 else
 	@echo "Linux detected. Assuming there's an apt binary though."	
 	sudo apt install -y \
