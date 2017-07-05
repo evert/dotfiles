@@ -49,7 +49,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -77,13 +77,16 @@ Plugin 'plasticboy/vim-markdown'
 Bundle 'tobyS/vmustache'
 
 " PHP docbloc plugin
-Bundle 'tobyS/pdv'
+" Bundle 'tobyS/pdv'
 
 " Go plugin!
 Bundle 'fatih/vim-go'
 
 " Neocomplete
 Bundle 'Shougo/neocomplete.vim'
+
+" ctrlp
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -94,7 +97,6 @@ filetype plugin indent on
 let g:vim_markdown_frontmatter = 1
 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
 
 " Show buffers when there's only one tab open
 let g:airline#extensions#tabline#enabled = 1
