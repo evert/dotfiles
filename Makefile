@@ -38,7 +38,8 @@ ifeq ($(UNAME),Darwin)
 		nodejs \
 		npm \
 		ack \
-		reattach-to-user-namespace
+		reattach-to-user-namespace \
+		htop
 else
 	@echo "Linux detected. Assuming there's an apt binary though."	
 	sudo apt install -y \
