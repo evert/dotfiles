@@ -11,10 +11,10 @@ let t_Co=256
 syntax enable
 
 " Size of a 'hard tab'
-set tabstop=4
+set softtabstop=2
 
 " Size of an indent
-set shiftwidth=4
+set shiftwidth=2
 
 " Use spaces for tabs
 set expandtab

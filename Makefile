@@ -1,6 +1,6 @@
 SHELL=/bin/sh
 HOMEDIR=$(HOME)
-THINGS_TO_LINK=.gitconfig .zshrc .tmux.conf .vimrc
+THINGS_TO_LINK=.gitconfig .zshrc .tmux.conf .vimrc .dircolors
 
 UNAME := $(shell uname)
 
@@ -39,6 +39,8 @@ ifeq ($(UNAME),Darwin)
 		npm \
 		ack \
 		reattach-to-user-namespace \
+		wget \
+		coreutils \
 		htop
 else
 	@echo "Linux detected. Assuming there's an apt binary though."	
