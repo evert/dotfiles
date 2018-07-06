@@ -59,6 +59,7 @@ else
 		xclip \
 		yui-compressor \
 		nodejs \
+		npm \
 		tree \
 		powerline
 endif
