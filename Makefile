@@ -60,8 +60,7 @@ else
 		yui-compressor \
 		nodejs \
 		tree \
-		powerline \
-		ack-grep
+		powerline
 endif
 
 oh-my-zsh:

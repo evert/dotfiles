@@ -53,10 +53,11 @@ plugins=(git tmux)
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.local/bin"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.local/bin:$HOME/bin/go_appengine"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOQUIT=false
 
 source $ZSH/oh-my-zsh.sh
 

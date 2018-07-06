@@ -49,7 +49,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -72,6 +72,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Better markdown support
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+
+" Typescript
+Plugin 'leafgarland/typescript-vim'
 
 " Required for tobyS/pdv
 Bundle 'tobyS/vmustache'
