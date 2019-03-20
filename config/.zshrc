@@ -78,3 +78,5 @@ export GOPATH=/home/evert/src
 
 # Colors. Oh yea!
 alias ls="ls --color=always"
+
+alias open="xdg-open"
