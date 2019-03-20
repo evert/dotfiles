@@ -45,23 +45,23 @@ ifeq ($(UNAME),Darwin)
 else
 	@echo "Linux detected. Assuming there's an apt binary though."	
 	sudo apt install -y \
-		vim \
+		vim-gtk3 \
 		git \
 		tig \
 		tmux \
 		zsh \
 		curl \
-		php \
-		php-xdebug \
-		php-mysql \
-		php-curl \
+		php php-xdebug php-mysql php-curl php-xml \
 		mysql-server \
 		xclip \
 		yui-compressor \
 		nodejs \
 		npm \
 		tree \
-		powerline
+		powerline \
+		pv \
+		ruby \
+		ruby-dev
 endif
 
 oh-my-zsh:
