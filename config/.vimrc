@@ -77,19 +77,25 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'leafgarland/typescript-vim'
 
 " Required for tobyS/pdv
-Bundle 'tobyS/vmustache'
+Plugin 'tobyS/vmustache'
 
 " PHP docbloc plugin
-" Bundle 'tobyS/pdv'
+" Plugin 'tobyS/pdv'
 
 " Go plugin!
-Bundle 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 
 " Neocomplete
-Bundle 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neocomplete.vim'
 
 " ctrlp
 Plugin 'ctrlpvim/ctrlp.vim'
+
+" Ayu theme
+Plugin 'ayu-theme/ayu-vim'
+
+" Autocomplete
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -106,3 +112,10 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Powerline fonts for vim-airline
 let g:airline_powerline_fonts = 1
+
+set termguicolors
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+
+let ayucolor="dark"
+colorscheme ayu
