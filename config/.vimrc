@@ -86,7 +86,7 @@ Plugin 'tobyS/vmustache'
 Plugin 'fatih/vim-go'
 
 " Neocomplete
-Plugin 'Shougo/neocomplete.vim'
+" Plugin 'Shougo/neocomplete.vim'
 
 " ctrlp
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -96,6 +96,15 @@ Plugin 'ayu-theme/ayu-vim'
 
 " Autocomplete
 Plugin 'Valloric/YouCompleteMe'
+
+" Retro groove color scheme for Vim
+Plugin 'morhetz/gruvbox'
+
+" CSS color highlighting
+Plugin 'ap/vim-css-color'
+
+" Code coverage
+Plugin 'ruanyl/coverage.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -117,5 +126,10 @@ set termguicolors
 let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 
-let ayucolor="dark"
-colorscheme ayu
+set background=dark
+colorscheme gruvbox 
+
+" Use \ in normal mode to find definition
+nmap \ :YcmCompleter GoTo<CR>
+
+let g:coverage_json_report_path = 'coverage/coverage-final.json'

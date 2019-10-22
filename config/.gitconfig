@@ -1,8 +1,7 @@
 [user]
     name = Evert Pot
     email = me@evertpot.com
-    signingkey = 6D75CC9B
-
+    signingkey = F189847A04AD9D0F
 [color]
     ui = auto
 [alias]
@@ -25,3 +24,5 @@
     clean = git-media-clean %f
     smudge = git-media-smudge %f
 
+[commit]
+  gpgSign = true
