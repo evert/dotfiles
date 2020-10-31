@@ -49,17 +49,10 @@ else
 		tmux \
 		zsh \
 		curl \
-		php php-xdebug php-mysql php-curl php-xml \
 		mysql-server \
-		xclip \
-		yui-compressor \
-		nodejs \
-		npm \
 		tree \
 		powerline \
-		pv \
-		ruby \
-		ruby-dev
+		pv
 endif
 
 oh-my-zsh:
