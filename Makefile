@@ -33,8 +33,6 @@ ifeq ($(UNAME),Darwin)
 		tmux \
 		zsh \
 		curl \
-		homebrew/php/php70 \
-		yuicompressor \
 		nodejs \
 		npm \
 		ack \
