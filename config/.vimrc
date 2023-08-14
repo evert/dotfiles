@@ -31,6 +31,9 @@ set nofoldenable
 " My preference is to not wrap
 set nowrap
 
+" Automatically get changes if file changed on disk
+set autoread 
+
 " Automatically open NERDTree when hitting Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
@@ -44,6 +47,10 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " VUNDLE stuff.
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+" Turn on ALE completion
+let g:ale_completion_enabled = 1
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -71,7 +78,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Better markdown support
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'preservim/vim-markdown'
 
 " Typescript
 Plugin 'leafgarland/typescript-vim'
@@ -95,7 +102,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ayu-theme/ayu-vim'
 
 " Autocomplete
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+
+" Also autocomplete
+Plugin 'dense-analysis/ale'
 
 " Retro groove color scheme for Vim
 Plugin 'morhetz/gruvbox'
@@ -105,6 +115,17 @@ Plugin 'ap/vim-css-color'
 
 " Code coverage
 Plugin 'ruanyl/coverage.vim'
+
+" Better javascript
+Plugin 'pangloss/vim-javascript'
+
+" Typescript and vim
+Plugin 'peitalin/vim-jsx-typescript'
+
+" Dracula theme
+Plugin 'dracula/vim', { 'name': 'dracula' }
+
+Plugin 'frazrepo/vim-rainbow'
 
 call vundle#end()
 filetype plugin indent on
@@ -127,9 +148,23 @@ let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 
 set background=dark
-colorscheme gruvbox 
+colorscheme dracula
 
 " Use \ in normal mode to find definition
-nmap \ :YcmCompleter GoTo<CR>
+nmap \ :ALEGoToDefinition<CR>
+
+" Use t in normal mode to open NERDtree.
+nmap t :NERDTree<CR>
 
 let g:coverage_json_report_path = 'coverage/coverage-final.json'
+
+
+let g:rainbow_active = 1
+
+" ALE config
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️:'
+
+
+" tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
