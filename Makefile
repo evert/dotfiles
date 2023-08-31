@@ -1,6 +1,6 @@
 SHELL=/bin/sh
 HOMEDIR=$(HOME)
-THINGS_TO_LINK=.gitconfig .zshrc .tmux.conf .vimrc .dircolors
+THINGS_TO_LINK=.gitconfig .zshrc .tmux.conf .vimrc .dircolors .config/nvim 
 
 UNAME := $(shell uname)
 

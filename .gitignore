@@ -3,3 +3,5 @@
 
 # Auto-generated vim
 /config/.vim/bundle
+
+/config/.config/nvim/plugged

@@ -1,0 +1,26 @@
+-- Line numbers
+vim.opt.number = true
+
+-- Indentation stuff
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+-- vim-plug plugin manager
+vim.call('plug#begin', '~/.config/nvim/plugged')
+
+local Plug = vim.fn['plug#']
+
+Plug('nvim-tree/nvim-tree.lua')
+Plug('nvim-tree/nvim-web-devicons')
+Plug('nvim-treesitter/nvim-treesitter')
+Plug('neovim/nvim-lspconfig')
+Plug('folke/tokyonight.nvim')
+
+vim.call('plug#end')
+
+-- Colors!
+vim.cmd[[colorscheme tokyonight]]
+
+-- LSP magic
+require'lspconfig'.tsserver.setup {}
