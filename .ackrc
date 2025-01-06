@@ -1,0 +1,3 @@
+--ignore-file=ext:map
+--ignore-file=is:package-lock.json
+--ignore-dir=.nyc_output
