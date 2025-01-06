@@ -40,8 +40,24 @@ ifeq ($(UNAME),Darwin)
 		wget \
 		coreutils \
 		htop
+else ifneq (, $(shell which dnf))
+	@echo Got a 'dnf' binary. Assuming fedora
+	sudo dnf install \
+		vim \
+		git \
+		tig \
+		tmux \
+		zsh \
+		curl \
+		nodejs \
+		npm \
+		ack \
+		powerline tmux-powerline powerline-fonts \
+		pv \
+		mariadb-server \
+		valkey
 else
-	@echo "Linux detected. Assuming there's an apt binary though."	
+	@echo "Other linux detected. Assuming there's an apt binary."	
 	sudo apt install -y \
 		vim-gtk3 \
 		git \
@@ -56,10 +72,7 @@ else
 endif
 
 oh-my-zsh:
-	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o install-oh-my-zsh.sh;
-	sh install-oh-my-zsh.sh
-	rm install-oh-my-zsh.sh
-	chsh -s /usr/bin/zsh
+	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 vim:
 	mkdir -p $(HOMEDIR)/.vim/bundle
@@ -68,5 +81,10 @@ vim:
 bin: install-packages
 	mkdir $(HOMEDIR)/bin
 	curl -sS https://getcomposer.org/installer | php -- --install-dir=$(HOMEDIR)/bin --filename=composer
+
+neovim:
+	sh -c 'curl -fLo "$${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	npm install -g typescript-language-server
 
 .PHONY: all install git link

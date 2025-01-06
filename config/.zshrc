@@ -64,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 export GPGKEY=AE788729
 
@@ -80,3 +80,5 @@ export GOPATH=/home/evert/src
 alias ls="ls --color=always"
 
 alias open="xdg-open"
+
+alias vim=nvim
