@@ -37,6 +37,9 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'filipdutescu/renamer.nvim', { 'branch': 'master' }
 
+  " Copilot
+  Plug 'github/copilot.vim'
+
 call plug#end()
 
 " CTRL-G opens the file tree
