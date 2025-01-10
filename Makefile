@@ -55,6 +55,7 @@ else ifneq (, $(shell which dnf))
 		powerline tmux-powerline powerline-fonts \
 		pv \
 		mariadb-server \
+		ksshaskpass \
 		valkey
 else
 	@echo "Other linux detected. Assuming there's an apt binary."	
