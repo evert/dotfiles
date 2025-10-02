@@ -18,16 +18,15 @@
 [difftool]
     prompt = false
 [push]
-    default = simple
-    autoSetupRemote = true
+  default = simple
+  autoSetupRemote = true
+  followTags = true
 [filter "media"]
     clean = git-media-clean %f
     smudge = git-media-smudge %f
 
 [commit]
   gpgSign = true
-[pull]
-	rebase = true
 [init]
 	defaultBranch = main
 [filter "lfs"]
@@ -35,3 +34,14 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[branch]
+  # recent branches first
+  sort = -committerdate
+
+[rebase]
+  autosquash = true
+  autoStash = true
+  updateRefs = true
+
+[pull]
+	rebase = false
