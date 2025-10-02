@@ -59,9 +59,11 @@ return {
 
     -- Set up lspconfig.
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    require("lspconfig").ts_ls.setup({
+    vim.lsp.config.ts_ls = {
       capabilities = capabilities,
-    })
+      -- You can also add on_attach or settings here
+    }
+    vim.lsp.enable("ts_ls")
 
   end 
 
