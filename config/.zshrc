@@ -49,14 +49,14 @@ ZSH_THEME="sunrise"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(git direnv aws)
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.local/bin:$HOME/bin/go_appengine"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.local/bin:$HOME/bin/go_appengine:/home/evert/.cargo/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART=false
 export ZSH_TMUX_AUTOQUIT=false
 
 source $ZSH/oh-my-zsh.sh
@@ -72,7 +72,7 @@ export GPGKEY=AE788729
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Composer global dir
-export PATH="$HOME/.composer/vendor/bin:$PATH:"
+export PATH="$HOME/.composer/vendor/bin:$PATH:$HOME/src/bin"
 
 export GOPATH=/home/evert/src
 
@@ -82,3 +82,16 @@ alias ls="ls --color=always"
 alias open="xdg-open"
 
 alias vim=nvim
+
+alias big=figlet
+
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+
+# bun completions
+[ -s "/home/evert/.bun/_bun" ] && source "/home/evert/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
