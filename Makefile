@@ -1,19 +1,20 @@
 SHELL=/bin/sh
 HOMEDIR=$(HOME)
-THINGS_TO_LINK=.gitconfig .zshrc .tmux.conf .vimrc .dircolors .config/nvim 
+CONFIGDIR=$(HOMEDIR)/.config
 
 UNAME := $(shell uname)
 
 all: install
 
 link:
-	@for filename in $(THINGS_TO_LINK) ; do \
-		if [ -e "$(HOMEDIR)/$$filename" ]; \
-		then \
-			echo "$$filename already exists"; \
-		else \
-			echo ln -s "$(shell pwd)/config/$$filename" "$(HOMEDIR)/$$filename"; \
-			ln -s "$(shell pwd)/config/$$filename" "$(HOMEDIR)/$$filename"; \
+	@for filename in config/* ; do \
+		bn=$$(basename $$filename); \
+		target="$(CONFIGDIR)/$$bn"; \
+		if [ -e "$$target" ]; then \
+			echo "Link $$target already exists, skipping"; \
+	  else \
+			echo ln -s "$(shell pwd)/$$filename" "$$target"; \
+			ln -s "$(shell pwd)/$$filename" "$$target"; \
 		fi; \
 	done
 
@@ -76,8 +77,8 @@ oh-my-zsh:
 	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 vim:
-	mkdir -p $(HOMEDIR)/.vim/bundle
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	mkdir -p $(CONFIGDIR)/vim/bundle
+	git clone https://github.com/VundleVim/Vundle.vim.git ${CONFIGDIR}/vim/bundle/Vundle.vim
 
 bin: install-packages
 	mkdir $(HOMEDIR)/bin
