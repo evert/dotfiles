@@ -146,19 +146,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-
-export EDITOR=vimx
+export EDITOR=nvim
 
 alias open="xdg-open"
 alias gp="git push -u origin HEAD"
-alias git=hub
 
 alias vim=nvim
 alias t=zellij
 alias findcar=~/src/autofinder/run.mjs
 
-export TERM=alacritty
+# export TERM=alacritty
 
 #source /etc/grc.zsh
 

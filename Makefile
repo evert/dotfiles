@@ -44,20 +44,22 @@ ifeq ($(UNAME),Darwin)
 else ifneq (, $(shell which dnf))
 	@echo Got a 'dnf' binary. Assuming fedora
 	sudo dnf install \
-		vim \
-		git \
-		tig \
-		tmux \
-		zsh \
+		ack \
 		curl \
+		direnv \
+		fzf \
+		git \
 		nodejs \
 		npm \
-		ack \
 		powerline tmux-powerline powerline-fonts \
 		pv \
-		mariadb-server \
-		ksshaskpass \
-		valkey
+		tig \
+		tmux \
+		vim \
+		zsh
+		#mariadb-server \
+		#ksshaskpass \
+		#valkey
 else
 	@echo "Other linux detected. Assuming there's an apt binary."	
 	sudo apt install -y \
@@ -74,7 +76,7 @@ else
 endif
 
 oh-my-zsh:
-	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	ZSH=~/.local/share/oh-my-zsh sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 vim:
 	mkdir -p $(CONFIGDIR)/vim/bundle
